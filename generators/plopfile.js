@@ -1,12 +1,11 @@
-export default function (plop) {
-  // controller generator
+module.exports = (plop) => {
   plop.setGenerator('controller', {
-    description: 'application controller logic',
+    description: 'automate component creation',
     prompts: [
       {
         type: 'input',
         name: 'name',
-        message: 'controller name please'
+        message: 'component name please'
       }
     ],
     actions: [
