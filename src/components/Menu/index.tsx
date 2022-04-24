@@ -7,6 +7,7 @@ import { ShoppingCartOutline as ShoppingCartIcon } from '@styled-icons/evaicons-
 import { Close as CloseIcon } from 'styled-icons/material-outlined'
 
 import Logo from 'components/Logo'
+import Button from 'components/Button'
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
@@ -28,9 +29,23 @@ const Menu = () => {
         </S.IconWrapper>
       </S.MenuGroup>
 
-      <S.FullMenu role="navigation" aria-hidden={!isOpen} isOpen={isOpen}>
+      <S.MenuFull role="navigation" aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
-      </S.FullMenu>
+        <S.MenuNav>
+          <S.MenuLink href="#">Home</S.MenuLink>
+          <S.MenuLink href="#">Explore</S.MenuLink>
+        </S.MenuNav>
+
+        <S.RegisterBox>
+          <Button fullWidth size="large">
+            Login
+          </Button>
+          <span>or</span>
+          <S.CreateAccount href="#" title="Sign up">
+            Sign up
+          </S.CreateAccount>
+        </S.RegisterBox>
+      </S.MenuFull>
     </S.Wrapper>
   )
 }
