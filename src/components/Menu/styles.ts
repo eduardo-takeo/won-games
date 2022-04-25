@@ -38,29 +38,36 @@ export const MenuGroup = styled.div`
     justify-content: flex-end;
 
     > div {
-      margin-left: ${theme.spacings.xxsmall};
+      margin-right: ${theme.spacings.xxsmall};
     }
   `}
 `
 
-export const MenuNav = styled.div``
+export const MenuNav = styled.div`
+  ${({ theme }) => css`
+    ${media.greaterThan('medium')`
+      margin-left: ${theme.spacings.small};
+    `}
+  `}
+`
 
 export const MenuLink = styled.a`
   ${({ theme }) => css`
     position: relative;
-    font-size: ${theme.font.sizes.medium}
+    font-size: ${theme.font.sizes.medium};
     margin: 0.3rem ${theme.spacings.small} 0;
     text-decoration: none;
     text-align: center;
+    color: ${theme.colors.white};
 
     &:hover {
       &::after {
         content: '';
         position: absolute;
         display: block;
-        height: .3rem;
+        height: 0.3rem;
         background-color: ${theme.colors.primary};
-        animation: hoverAnimation .2s forwards;
+        animation: hoverAnimation 0.2s forwards;
       }
 
       @keyframes hoverAnimation {
