@@ -3,6 +3,11 @@ import Menu from '.'
 
 export default {
   title: 'Menu',
+  argTypes: {
+    username: {
+      type: 'string'
+    }
+  },
   component: Menu
 } as Meta
 

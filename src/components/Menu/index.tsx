@@ -9,7 +9,11 @@ import { Close as CloseIcon } from 'styled-icons/material-outlined'
 import Logo from 'components/Logo'
 import Button from 'components/Button'
 
-const Menu = () => {
+export type MenuProps = {
+  username?: string
+}
+
+const Menu = ({ username }: MenuProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false)
 
   return (
@@ -34,17 +38,25 @@ const Menu = () => {
         <S.MenuNav>
           <S.MenuLink href="#">Home</S.MenuLink>
           <S.MenuLink href="#">Explore</S.MenuLink>
+          {!!username && (
+            <>
+              <S.MenuLink href="#">My Account</S.MenuLink>
+              <S.MenuLink href="#">Wishlist</S.MenuLink>
+            </>
+          )}
         </S.MenuNav>
 
-        <S.RegisterBox>
-          <Button fullWidth size="large">
-            Login
-          </Button>
-          <span>or</span>
-          <S.CreateAccount href="#" title="Sign up">
-            Sign up
-          </S.CreateAccount>
-        </S.RegisterBox>
+        {!username && (
+          <S.RegisterBox>
+            <Button fullWidth size="large">
+              Login
+            </Button>
+            <span>or</span>
+            <S.CreateAccount href="#" title="Sign up">
+              Sign up
+            </S.CreateAccount>
+          </S.RegisterBox>
+        )}
       </S.MenuFull>
     </S.Wrapper>
   )
