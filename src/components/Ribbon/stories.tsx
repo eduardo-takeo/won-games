@@ -13,7 +13,7 @@ export default {
         style={{
           backgroundColor: 'gray',
           height: '30rem',
-          width: '50rem',
+          width: '40rem',
           position: 'relative'
         }}
       >
