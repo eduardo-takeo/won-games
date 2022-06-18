@@ -13,7 +13,22 @@ export default {
   },
   parameters: {
     layout: 'fullscreen'
-  }
+  },
+  decorators: [
+    (Story) => (
+      <div style={{ maxWidth: '100rem', margin: '0 auto' }}>
+        <Story />
+      </div>
+    )
+  ]
 } as Meta
 
 export const Default: Story<BannerProps> = (args) => <Banner {...args} />
+
+export const WithRibbon: Story<BannerProps> = (args) => <Banner {...args} />
+
+WithRibbon.args = {
+  ribbon: '20% OFF',
+  ribbonSize: 'normal',
+  ribbonColor: 'primary'
+}
