@@ -15,7 +15,7 @@ const Ribbon = ({
 }: RibbonProps) => {
   return (
     <S.Wrapper color={color} size={size}>
-      <h1>{children}</h1>
+      {children}
     </S.Wrapper>
   )
 }
